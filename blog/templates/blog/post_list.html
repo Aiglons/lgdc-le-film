@@ -7,6 +7,14 @@
         <p>Bienvenue sur le site du Film <i>La guerre des clans</i></p>
         <h1>Actualité</h1>
 		<p>Retrouvez les dernière nouvelles concernats Le Film de La guerre des Clans !
+		<br>
+		{% for post in posts %}
+        <div>
+        <p>publié: {{ post.published_date }}</p>
+        <h1>{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+        {% endfor %}
 	
 	
 	</body>
