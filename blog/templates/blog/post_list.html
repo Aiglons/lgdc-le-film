@@ -1,21 +1,67 @@
 <html>
     <head>
-        <title>LGDC - Le film</title>
+    <meta name="description" content="Découvrez toute l'info du Film de la guerre des clans en français..." /> 
+    <link rel="apple-touch-icon" href="images/slime.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>LGDC - Le Film</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel='stylesheet' id='compiled.css-css'  href='https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled.min.css?ver=4.4.0' type='text/css' media='all' />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://slime-vert.000webhostapp.com/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://slime-vert.000webhostapp.com/css/mdb.min.css" rel="stylesheet">
     </head>
+	<!--------------------------------------------------------Fin header------------------------------------------------------------------------------------------>			
     <body>
-        <h1>La Guerre Des Clans : Le Film</h1>
-        <p>Bienvenue sur le site du Film <i>La guerre des clans</i></p>
-        <h1>Actualité</h1>
-		<p>Retrouvez les dernière nouvelles concernats Le Film de La guerre des Clans !
-		<br>
-		{% for post in posts %}
-        <div>
-        <p>publié: {{ post.published_date }}</p>
-        <h1>{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+                        
+<!--Carousel Wrapper-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+{% for post in posts %}
+        <!--First slide-->
+        <div class="carousel-item active">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ post.title }}</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a class="btn btn-primary">Lire la suite ></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--/.First slide-->
+
+{% endfor %}
     </div>
-        {% endfor %}
-	
-	
-	</body>
+    <!--/.Slides-->
+
+</div>
+<!--/.Carousel Wrapper-->
+<!--Main Navigation-->
+
+<script type="text/javascript" src="https://mdbootstrap.com/previews/docs/latest/js/compiled.min.js"></script>
+    <script>
+        wow = new WOW().init();
+    </script>
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery --
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
 </html>
