@@ -25,13 +25,40 @@
     </head>
 	<!--------------------------------------------------------Fin header------------------------------------------------------------------------------------------>			
     <body>
-	{% if user.is_authenticated %}
-	<a href="{% url 'post_new' %}" class="top-menu"><i class="fa fa-plus" aria-hidden="true"></i></a>
-	<h4>LA GUERRE DES CLANS :LE FILM</h4>
-	{% endif %}
+	<!--Main Navigation-->
+<header>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-blue scrolling-navbar">
+        <a class="navbar-brand" href="http://lgdclefilm.pythonanywhere.com/"><strong><i>LA GUERRE DES CLANS</i> : LE FILM</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://lgdclefilm.pythonanywhere.com/">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">A propos</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    	{% if user.is_authenticated %}
+	                    <a href="{% url 'post_new' %}" class="nav-link waves-effect waves-light"><i class="fa fa-plus"></i></a>
+	                   {% endif %}
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+<!--Main Navigation-->
+<br>
+<br>
+<br>
 	{% block content %}
     {% endblock %}
-<!--Main Navigation-->
 
 <script type="text/javascript" src="https://mdbootstrap.com/previews/docs/latest/js/compiled.min.js"></script>
     <script>
