@@ -18,13 +18,17 @@
     font-weight: 300;
 }
     .basic-textarea textarea {
-    height: auto;
+    height: 1000;
 	width: 800;
 }
 	</style>
     </head>
 	<!--------------------------------------------------------Fin header------------------------------------------------------------------------------------------>			
     <body>
+	{% if user.is_authenticated %}
+	<a href="{% url 'post_new' %}" class="top-menu"><i class="fa fa-plus" aria-hidden="true"></i></a>
+	<h4>LA GUERRE DES CLANS :LE FILM</h4>
+	{% endif %}
 	{% block content %}
     {% endblock %}
 <!--Main Navigation-->
