@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div class="marge">
     <h1>Nouveau post</h1>
 	{% if user.is_authenticated %}
     <form method="POST" class="post-form">{% csrf_token %}
@@ -10,4 +11,5 @@
 	{% else %}
 	<center><h1 style="color:Tomato;">VOUS N'AVEZ PAS ACCES A CETTE PAGE CAR VOUS N'ETES PAS CONNECTE</h1></center>
 	{% endif %}
+	</div>
 {% endblock %}
