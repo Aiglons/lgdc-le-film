@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div class="marge">
     <div class="post">
         {% if post.published_date %}
             <div class="date">
@@ -8,9 +9,13 @@
             </div>
         {% endif %}
 		{% if user.is_authenticated %}
+		<div align="right">
         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><i class="fa fa-pencil"></i></a>
+		</div>
 		{% endif %}
         <h1>{{ post.title }}</h1>
+		<center><img src="{{ post.image_lien }}" width="auto" height="370"></center>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+</div>
 {% endblock %}
