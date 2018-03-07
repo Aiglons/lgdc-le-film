@@ -12,13 +12,12 @@ def post_list(request):
 def google(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/google311f29b3ed4bd3be.html', {'posts': posts})
-	
-def imagefilm(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'blog/images/affiche-warriors-movie.jpeg', {'posts': posts})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    #imagestr = str(post.image)
+    #image = imagestr.split('blog/static/')
+    #post.image = (image[1])
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def post_new(request):

@@ -1,4 +1,6 @@
 {% extends 'blog/base.html' %}
+{% load staticfiles %}
+{ %  load  bbcode_tags  % }
 
 {% block content %}
 <div class="marge">
@@ -14,8 +16,8 @@
 		</div>
 		{% endif %}
         <h1>{{ post.title }}</h1>
-		<center><img src="{{ post.image_lien }}" width="auto" height="370"></center>
-        <p>{{ post.text|linebreaksbr }}</p>
+		<center><img src="{% static post.image %}" width="auto" height="370"></center>
+		<p>{{ post.text.rendered|linebreaksbr }}</p>
     </div>
 </div>
 {% endblock %}
