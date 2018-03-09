@@ -2,22 +2,34 @@
 {% load staticfiles %}
 { %  load  bbcode_tags  % }
 
+{% block header %}   
+ {{ post.title }}
+{% endblock %}
+
 {% block content %}
 <div class="marge">
     <div class="post">
+	{% if user.is_authenticated %}
+		<div align="right">
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><i class="fa fa-pencil"></i></a>
+		</div>
+		{% endif %}
+	{% if post.Publique == True %}
+	
         {% if post.published_date %}
             <div class="date">
                 {{ post.published_date }}
             </div>
         {% endif %}
-		{% if user.is_authenticated %}
-		<div align="right">
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><i class="fa fa-pencil"></i></a>
-		</div>
-		{% endif %}
+		
         <h1>{{ post.title }}</h1>
 		<center><img src="{{ post.image_lien }}" width="auto" height="370"></center>
 		<p>{{ post.text.rendered|linebreaksbr }}</p>
     </div>
+	{% else %}
+	 
+	  <center><h4> Cette page n'est pas ou plus disponible car elle est en cours de modification </h4></center>
+	  
+	{% endif %}
 </div><!--{% static post.image %}-->
 {% endblock %}

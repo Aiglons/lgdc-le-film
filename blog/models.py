@@ -9,6 +9,7 @@ class Post(models.Model):
     image_lien = models.CharField(max_length=400, default = 'http://www.croiseedesclans.fr/medias/images/affiche-warriors-movie.jpeg')
     resume = models.CharField(max_length=100)
     text = BBCodeTextField()
+    Publique = models.BooleanField(default=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
