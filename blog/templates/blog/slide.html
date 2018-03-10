@@ -1,0 +1,16 @@
+        <!--First slide-->
+        <div class="carousel-item active">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="img-fluid" src="{{ post.image_lien }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ post.title }}</h4>
+                        <p class="card-text">{{ post.resume }}</p>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Lire la suite ></a>{% if user.is_authenticated %}<p style="float: right;">{% if post.Publique == True %}<p style="color:MediumSeaGreen;float: right;">Publique</p> {% else %}<p style="color:red;float: right;">Brouillon</p> {% endif %}{% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--/.First slide-->

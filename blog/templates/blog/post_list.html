@@ -14,22 +14,26 @@ Accueil
 {% for post in posts %}
      
     {% if post.Publique == True %}
+
         <!--First slide-->
         <div class="carousel-item active">
-
             <div class="col-md-4">
                 <div class="card">
                     <img class="img-fluid" src="{{ post.image_lien }}" alt="Card image cap">
                     <div class="card-body">
                         <h4 class="card-title">{{ post.title }}</h4>
                         <p class="card-text">{{ post.resume }}</p>
-                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Lire la suite ></a>
+                        <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Lire la suite ></a>{% if user.is_authenticated %}<p style="color:MediumSeaGreen;float: right;">Publique</p> {% endif %}
                     </div>
                 </div>
             </div>
 
         </div>
         <!--/.First slide-->
+		{% else %}
+		{% if user.is_authenticated %}
+	 {% include "blog/slide.html" %}
+	 {% endif %}
       {% endif %}
 {% endfor %}
     </div>
